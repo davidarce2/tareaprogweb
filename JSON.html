@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JSON</title>
+    <meta charset="utf-8" >
+    <script>
+    
+    var fido= { 
+      name:'fido', 
+      weight:40, 
+      breed:'puddle', 
+     loves:["walks",'fetching ball' ] 
+     };
+     var fidoJSON= JSON.stringify(fido);
+     console.log(fido);
+     console.log(fidoJSON);
+     var fidoObjeto=JSON.parse(fidoJSON);
+     console.log(fidoObjeto);
+     console.log("El tipo de dato de la variable fido es:"+ typeof(fido));
+     console.log("El tipo de dato de la variable fidoJSON es:"+typeof(fidoJSON));
+     console.log("El tipo de dato de la variable fidoObjeto es:"+typeof(fidoObjeto));
+     
+     function init()
+     {
+		 var lista = '';
+		 var lista1 = document.getElementById('fidoobjeto');
+		 
+         
+         document.getElementById('fidojson').innerHTML=fidoJSON;
+         
+         
+		 lista = lista + ' <li> name: ' + fidoObjeto.name + '</li>';
+		 lista = lista + ' <li> weight: ' + fidoObjeto.weight + '</li>';
+		 lista = lista + ' <li> bred: ' + fidoObjeto.breed + '</li>';
+		 lista = lista + ' <li> loves: ' + fidoObjeto.loves + '</li>';
+		 
+         
+         lista1.innerHTML=lista;
+    }
+    
+     window.onload= init;
+    </script>
+  </head>
+  <body>
+     <h1> Imprimir fidoJSON </h1> 
+     <p> El valor de la variable fidoJSON es <span id="fidojson"></span> </p>
+      <h1> Imprimir fidoObjeto </h1>
+      <ul id="fidoobjeto">
+     </ul>
+   </body>
+</html>
